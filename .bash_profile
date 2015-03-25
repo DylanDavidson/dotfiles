@@ -4,17 +4,6 @@ fi
 
 alias ls='ls -G'
 alias be='bundle exec'
-eval "$(hub alias -s)"
-
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  . /usr/local/etc/bash_completion.d/git-completion.bash;
-  # PS1='[\W$(__git_ps1 " (%s)")]\$ ';
-fi
-
-if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-    . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
-    PS1='[\W$(__git_ps1 " \e[1;32m\](%s)\e[0m\]")]\$ ';
-fi
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin/psql/:$PATH
@@ -22,9 +11,51 @@ HISTFILESIZE=1000000000
 HISTSIZE=1000000
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-git() { command hub "$@"; if [[ "$1" == *checkout* ]] || [[ "$1" == *co* ]]; then cd .; fi }
-
 export LESS=eFRX
 
 export NVM_DIR="/Users/dylandavidson/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+COLOR_RED="\033[0;31m"
+COLOR_YELLOW="\033[0;33m"
+COLOR_GREEN="\033[0;32m"
+COLOR_OCHRE="\033[38;5;95m"
+COLOR_BLUE="\033[0;34m"
+COLOR_WHITE="\033[0;37m"
+COLOR_RESET="\033[0m"
+
+function git_color {
+  local git_status="$(git status 2> /dev/null)"
+
+  if [[ ! $git_status =~ "working directory clean" ]]; then
+    echo -e $COLOR_RED
+  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+    echo -e $COLOR_YELLOW
+  elif [[ $git_status =~ "nothing to commit" ]]; then
+    echo -e $COLOR_GREEN
+  else
+    echo -e $COLOR_OCHRE
+  fi
+}
+
+function git_branch {
+  local git_status="$(git status 2> /dev/null)"
+  local on_branch="On branch ([^${IFS}]*)"
+  local on_commit="HEAD detached at ([^${IFS}]*)"
+
+  if [[ $git_status =~ $on_branch ]]; then
+    local branch=${BASH_REMATCH[1]}
+    echo "($branch)"
+  elif [[ $git_status =~ $on_commit ]]; then
+    local commit=${BASH_REMATCH[1]}
+    echo "($commit)"
+  fi
+}
+
+PS1="\[$COLOR_WHITE\]\n[\W"          # basename of pwd
+PS1+="\[\$(git_color)\]"        # colors git status
+if [ -n git_branch ]; then
+  PS1+="\$(git_branch)\[$COLOR_RESET\]"
+fi     # prints current branch
+PS1+="]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, else '$'
+export PS1

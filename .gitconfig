@@ -3,6 +3,7 @@
 [core]
   whitespace = warn
 	excludesfile = ~/.gitignore
+	editor = vim
 [push]
 	default = current
 [rerere]
