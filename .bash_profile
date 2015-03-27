@@ -53,9 +53,12 @@ function git_branch {
 }
 
 PS1="\[$COLOR_WHITE\]\n[\W"          # basename of pwd
-PS1+="\[\$(git_color)\]"        # colors git status
-if [ -n git_branch ]; then
+if [[ -n git_branch ]]; then
+  PS1+="\[\$(git_color)\]"        # colors git status
   PS1+="\$(git_branch)\[$COLOR_RESET\]"
 fi     # prints current branch
-PS1+="]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, else '$'
+PS1+="\[$COLOR_WHITE\]]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, else '$'
 export PS1
+
+# Bundler
+alias b="bundle"
