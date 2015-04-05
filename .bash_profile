@@ -1,6 +1,9 @@
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
 
 alias ls='ls -G'
 alias be='bundle exec'
@@ -62,3 +65,4 @@ export PS1
 
 # Bundler
 alias b="bundle"
+export SSL_CERT_FILE=/opt/local/etc/certs/cacert.peme
