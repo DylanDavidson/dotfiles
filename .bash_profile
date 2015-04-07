@@ -60,5 +60,19 @@ fi     # prints current branch
 PS1+="\[$COLOR_WHITE\]]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, else '$'
 export PS1
 
+# Unix
+alias la="ls -a"
+
 # Bundler
 alias b="bundle"
+
+# Rails
+alias am="rake apartment:migrate"
+alias ar="rake apartment:rollback"
+alias m="rake db:migrate"
+alias r="rake db:rollback"
+alias r="rake"
+alias s="rspec"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
