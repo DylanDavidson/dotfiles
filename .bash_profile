@@ -55,7 +55,7 @@ function git_branch {
   fi
 }
 
-PS1="\[$COLOR_WHITE\]\n[\W"          # basename of pwd
+PS1="\[$COLOR_WHITE\][\W"          # basename of pwd
 if [[ -n git_branch ]]; then
   PS1+="\[\$(git_color)\]"        # colors git status
   PS1+="\$(git_branch)\[$COLOR_RESET\]"
