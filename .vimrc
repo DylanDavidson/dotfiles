@@ -36,6 +36,15 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" Fixes cursor with tmux
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Themes
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -69,7 +78,8 @@ nmap <CR> o<Esc>
 
 " Makes a go to start of line, and s go to end of line
 nnoremap a ^
-nnoremap s $
+nnoremap s <S-a>
+
 """"""""""""""""""""""""""""""""""""""""""""""
 " Vundle Packages
 """"""""""""""""""""""""""""""""""""""""""""""""
