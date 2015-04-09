@@ -30,6 +30,9 @@ set cursorline
 set wildmenu " Allows tab completion for commands
 set lazyredraw " For performance reasons
 
+set hidden " Hides annoying error messages
+
+set virtualedit=onemore " Adds extra space to end of line
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -78,8 +81,10 @@ nmap <CR> o<Esc>
 
 " Makes a go to start of line, and s go to end of line
 nnoremap a ^
-nnoremap s <S-a>
+nnoremap s $l
 
+" Maps q to b for easier word navigation
+nnoremap q b
 """"""""""""""""""""""""""""""""""""""""""""""
 " Vundle Packages
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -98,6 +103,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'tpope/vim-rails'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
