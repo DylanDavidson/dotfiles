@@ -3,6 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = " " " Sets leader to be space bar
+
 set nobackup
 set nowritebackup " Prevent vim from creating space wasting backups (git has got it)
 set noswapfile " More space wasting annoying files, don't need em
@@ -28,10 +29,10 @@ set splitright
 set cursorline
 
 set wildmenu " Allows tab completion for commands
-set lazyredraw " For performance reasons
 
 set hidden " Hides annoying error messages
 
+set autoread " Automatically monitors changes to files
 set virtualedit=onemore " Adds extra space to end of line
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -85,6 +86,11 @@ nnoremap s $l
 
 " Maps q to b for easier word navigation
 nnoremap q b
+
+nnoremap <SPACE> <Nop> " NOP for SPace so it can be the leader
+
+nnoremap <SPACE>s :Ag<SPACE>
+
 """"""""""""""""""""""""""""""""""""""""""""""
 " Vundle Packages
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -104,6 +110,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tpope/vim-rails'
+Plugin 'ggreer/the_silver_searcher'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,10 +125,12 @@ filetype plugin indent on    " required
 augroup vimrcEx
   autocmd!
   " Saves on Lost Focus
+  autocmd FocusGained * :CtrlPClearAllCaches
   autocmd BufLeave,FocusLost * silent! wall
   " Erases unnecessary whitespace
   autocmd BufWritePre * :%s/\s\+$//e
-
+  autocmd BufWritePre * :%s/\n\{3,}/\r\r/e " Remove extra new lines on save
+  au FocusGained * silent redraw! " Reload buffer when focus is gained
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or
   " when inside an event handler (happens when dropping a file on gvim).
@@ -129,4 +139,12 @@ augroup vimrcEx
       \   exe "normal g`\"" |
       \ endif
 augroup END
+
+" Silver Searcher
+"
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
 
