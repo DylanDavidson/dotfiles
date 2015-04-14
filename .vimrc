@@ -65,6 +65,10 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""
+" Move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
 " Makes pane switching easier by making it Ctrl+(hjkl)
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -83,6 +87,10 @@ nmap <CR> o<Esc>
 " Makes a go to start of line, and s go to end of line
 nnoremap a ^
 nnoremap s $l
+
+" Move to start/end of line and start editing with A and S
+nnoremap A <S-i>
+nnoremap S <S-a>
 
 " Maps q to b for easier word navigation
 nnoremap q b
