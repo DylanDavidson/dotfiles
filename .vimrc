@@ -32,6 +32,11 @@ set wildmenu " Allows tab completion for commands
 
 set hidden " Hides annoying error messages
 
+" Make search nicer
+set incsearch
+set ignorecase
+
+set scrolloff=12
 set autoread " Automatically monitors changes to files
 set virtualedit=onemore " Adds extra space to end of line
 " Switch syntax highlighting on, when the terminal has colors
@@ -63,8 +68,21 @@ else
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""
+" Functions
+"""""""""""""""""""""""""""""""""""""""""""""""
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""
+" Toggle Line Numbers
+nnoremap <C-n> :call NumberToggle()<cr>
+
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -75,30 +93,40 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Makes searching nicer by using incsearch package
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
 " Makes enter and Shift-Enter add newlines in Command Mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
 " Makes a go to start of line, and s go to end of line
-nnoremap a ^
-nnoremap s $l
+noremap a ^
+noremap s $l
 
 " Move to start/end of line and start editing with A and S
 nnoremap A <S-i>
 nnoremap S <S-a>
 
 " Maps q to b for easier word navigation
-nnoremap q b
+noremap q b
+
+vnoremap f <C-]>
 
 nnoremap <SPACE> <Nop> " NOP for SPace so it can be the leader
 
 nnoremap <SPACE>s :Ag<SPACE>
 
+" Mapping for autoclosing brackets
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+" Mapping for autoclosing parenthesis
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+" Mapping for autoquotes
+inoremap '      ''<Left>
+inoremap "      ""<Left>
 """"""""""""""""""""""""""""""""""""""""""""""
 " Vundle Packages
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -116,15 +144,30 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'haya14busa/incsearch.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'tpope/vim-fugitive'
+Plugin 'pbrisbin/vim-mkdir'
+Plugin 'tpope/vim-endwise'
+Plugin 'powerline/powerline'
+Plugin 'kristijanhusak/vim-multiple-cursors'
+Plugin 'vim-scripts/AutoComplPop'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 filetype plugin indent on    " required
+
+" syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
@@ -135,6 +178,10 @@ augroup vimrcEx
   " Saves on Lost Focus
   autocmd FocusGained * :CtrlPClearAllCaches
   autocmd BufLeave,FocusLost * silent! wall
+  " Change Line Numbers when in Insert/Normal
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
+
   " Erases unnecessary whitespace
   autocmd BufWritePre * :%s/\s\+$//e
   autocmd BufWritePre * :%s/\n\{3,}/\r\r/e " Remove extra new lines on save

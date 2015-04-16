@@ -11,6 +11,8 @@ fi
 
 alias ls='ls -G'
 alias be='bundle exec'
+alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
+alias rm='rm -I --preserve-root'
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin/psql/:$PATH
