@@ -173,7 +173,7 @@ Plugin 'pbrisbin/vim-mkdir'
 Plugin 'tpope/vim-endwise'
 Plugin 'powerline/powerline'
 Plugin 'kristijanhusak/vim-multiple-cursors'
-Plugin 'othree/vim-autocomplpop'
+Plugin 'vim-scripts/AutoComplPop'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 
