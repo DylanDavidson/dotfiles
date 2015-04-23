@@ -2,7 +2,11 @@
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = " " " Sets leader to be space bar
+let mapleader = "," " Sets leader to be comma
+
+" Sets statusline
+ set laststatus=2
+ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 set nobackup
 set nowritebackup " Prevent vim from creating space wasting backups (git has got it)
@@ -25,6 +29,7 @@ set numberwidth=5
 set splitbelow
 set splitright
 
+
 " Highlight current line of cursor
 set cursorline
 
@@ -35,6 +40,10 @@ set hidden " Hides annoying error messages
 " Make search nicer
 set incsearch
 set ignorecase
+
+" Gets rid of extra new line
+set noeol
+set fileformats+=dos
 
 set scrolloff=12
 set autoread " Automatically monitors changes to files
@@ -93,13 +102,19 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Make little movements in insert mode possible
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
 " Makes enter and Shift-Enter add newlines in Command Mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
 " Makes a go to start of line, and s go to end of line
-noremap a ^
-noremap s $l
+nnoremap a ^
+nnoremap s $l
 
 " Move to start/end of line and start editing with A and S
 nnoremap A <S-i>
@@ -110,9 +125,6 @@ noremap q b
 
 vnoremap f <C-]>
 
-nnoremap <SPACE> <Nop> " NOP for SPace so it can be the leader
-
-nnoremap <SPACE>s :Ag<SPACE>
 
 " Mapping for autoclosing brackets
 inoremap {      {}<Left>
@@ -127,6 +139,16 @@ inoremap ()     ()
 " Mapping for autoquotes
 inoremap '      ''<Left>
 inoremap "      ""<Left>
+
+" Leader then n toggles the nerdtree directory view
+noremap <leader>n :NERDTreeToggle<CR>
+" Leader then r toggles the renames file
+noremap <leader>r :Gmove<space>
+" leader then s saves file
+noremap <leader>s :w<CR>
+" leader then q quits file
+noremap <leader>q :q<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""
 " Vundle Packages
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -151,18 +173,14 @@ Plugin 'pbrisbin/vim-mkdir'
 Plugin 'tpope/vim-endwise'
 Plugin 'powerline/powerline'
 Plugin 'kristijanhusak/vim-multiple-cursors'
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'scrooloose/syntastic'
+Plugin 'othree/vim-autocomplpop'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 filetype plugin indent on    " required
-
-" syntastic options
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -184,7 +202,7 @@ augroup vimrcEx
 
   " Erases unnecessary whitespace
   autocmd BufWritePre * :%s/\s\+$//e
-  autocmd BufWritePre * :%s/\n\{3,}/\r\r/e " Remove extra new lines on save
+  autocmd BufWritePre * :%s/\n\{1,}\%$//e " Remove extra new lines on save
   au FocusGained * silent redraw! " Reload buffer when focus is gained
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or
@@ -196,10 +214,11 @@ augroup vimrcEx
 augroup END
 
 " Silver Searcher
-"
+" Bind \ to ag searching
+nnoremap \ :Ag<Space>
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
+  " Bind \ to grep
 endif
-
