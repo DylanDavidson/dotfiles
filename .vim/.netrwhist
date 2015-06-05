@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/dylandavidson/RailsApps/edge'
-let g:netrw_dirhist_2='/'
-let g:netrw_dirhist_3='/Users/dylandavidson/RailsApps/crowdfuel'
-let g:netrw_dirhist_4='/Users/dylandavidson/apps/crowdfuel'
-let g:netrw_dirhist_5='/Users/dylandavidson/RailsApps/crowdfuel'
-let g:netrw_dirhist_6='/Users/dylandavidson/RailsApps/edge'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/dylandavidson/apps/crowdfuel'
+let g:netrw_dirhist_2='/Users/dylandavidson/RailsApps/crowdfuelold'
+let g:netrw_dirhist_3='/Users/dylandavidson/apps/crowdfuel'
+let g:netrw_dirhist_4='/Users/dylandavidson/RailsApps/crowdfuelold'
+let g:netrw_dirhist_5='/Users/dylandavidson/apps/crowdfuel'
+let g:netrw_dirhist_6='/Users/dylandavidson/RailsApps/crowdfuelold'
+let g:netrw_dirhist_7='/Users/dylandavidson/apps/crowdfuel'
+let g:netrw_dirhist_8='/Users/dylandavidson/RailsApps/crowdfuelold'

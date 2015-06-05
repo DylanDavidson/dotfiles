@@ -125,6 +125,7 @@ noremap q b
 
 vnoremap f <C-]>
 
+inoremap <Up>/ ?
 
 " Mapping for autoclosing brackets
 inoremap {      {}<Left>
@@ -176,6 +177,8 @@ Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'gregsexton/MatchTag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -5,6 +5,8 @@ if [ -f ~/.profile ]; then
   source ~/.profile
 fi
 
+export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cacert.pem
+
 if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
   . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 fi
@@ -12,7 +14,7 @@ fi
 alias ls='ls -G'
 alias be='bundle exec'
 alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
-alias rm='rm -I --preserve-root'
+alias crowdfuel="ssh navigate@crowdfuel.roirevolution.com"
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin/psql/:$PATH
