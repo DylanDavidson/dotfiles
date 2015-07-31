@@ -116,8 +116,11 @@ nmap <CR> o<Esc>
 nnoremap a ^
 nnoremap s $l
 
-" Move to start/end of line and start editing with A and S
-nnoremap A <S-i>
+" Navigation helpers
+nnoremap H ^
+nnoremap L $
+nnoremap J {
+nnoremap K }
 nnoremap S <S-a>
 
 " Maps q to b for easier word navigation
@@ -179,6 +182,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'gregsexton/MatchTag'
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-bundler'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

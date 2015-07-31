@@ -73,6 +73,7 @@ export PS1
 
 # Unix
 alias la="ls -a"
+alias bp="source ~/.bash_profile"
 
 # Bundler
 alias b="bundle"
@@ -87,3 +88,7 @@ alias s="rspec"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
+
+# Jekyll/Blogging
+alias jek="jekyll serve --watch"
+alias drafts="jekyll serve --watch --drafts"
