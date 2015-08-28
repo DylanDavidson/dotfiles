@@ -119,7 +119,6 @@ nnoremap s $l
 " Navigation helpers
 nnoremap H ^
 nnoremap L $
-nnoremap J {
 nnoremap K }
 nnoremap S <S-a>
 

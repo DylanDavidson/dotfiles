@@ -11,6 +11,9 @@ if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
   . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 fi
 
+# Enables hub alias for git
+eval "$(hub alias -s)"
+
 alias ls='ls -G'
 alias be='bundle exec'
 alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
