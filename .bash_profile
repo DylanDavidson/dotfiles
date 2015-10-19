@@ -4,12 +4,23 @@ fi
 if [ -f ~/.profile ]; then
   source ~/.profile
 fi
+if [ -f ~/.sshaliases ]; then
+  source ~/.sshaliases
+fi
 
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cacert.pem
 
-if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+    . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+    PS1='[\W$(__git_ps1 " (%s)")]\$ ';
 fi
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+    . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+fi
+
+# Shows apple and computer info when opening new Terminal window
+archey --color
 
 # Enables hub alias for git
 eval "$(hub alias -s)"
@@ -17,7 +28,6 @@ eval "$(hub alias -s)"
 alias ls='ls -G'
 alias be='bundle exec'
 alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
-alias crowdfuel="ssh navigate@crowdfuel.roirevolution.com"
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin/psql/:$PATH
@@ -77,6 +87,24 @@ export PS1
 # Unix
 alias la="ls -a"
 alias bp="source ~/.bash_profile"
+alias bpe="vim ~/.bash_profile"
+alias ve="vim ~/.vimrc"
+alias v="vim ."
+
+# Git
+alias g="git"
+alias gc="git commit"
+alias gca="git commit --amend --no-edit"
+alias s="git s"
+alias d="git d"
+alias ds="git ds"
+alias co="git checkout"
+alias com="git checkout master"
+alias cod="git checkout develop"
+alias gad="git add ."
+
+alias rhh="git reset --hard HEAD"
+alias rhh1="git reset --hard HEAD~1"
 
 # Bundler
 alias b="bundle"
@@ -85,9 +113,7 @@ alias b="bundle"
 alias am="rake apartment:migrate"
 alias ar="rake apartment:rollback"
 alias m="rake db:migrate"
-alias r="rake db:rollback"
-alias r="rake"
-alias s="rspec"
+alias r="rspec spec/"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -95,3 +121,21 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # Jekyll/Blogging
 alias jek="jekyll serve --watch"
 alias drafts="jekyll serve --watch --drafts"
+
+# ROI Revolution stuff
+alias rubodiff="~/RailsApps/rubodiff"
+alias dashdiff="~/RailsApps/dashdiff"
+
+# Kills all Rails development related processes
+killrails() {
+  pkill zeus
+  pkill ruby
+  pkill resque
+  pkill faye
+}
+
+# Java :(
+javar() {
+  javac "$1.java"
+  java $1
+}

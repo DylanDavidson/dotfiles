@@ -3,3 +3,6 @@ tags
 .gemtags
 .tags_sorted_by_file
 dump.rdb
+.DS_Store
+*.swp
+*.class

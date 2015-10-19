@@ -37,6 +37,9 @@ set wildmenu " Allows tab completion for commands
 
 set hidden " Hides annoying error messages
 
+" Supposed to prevent the 'File has been changed since reading it'
+set autoread
+
 " Make search nicer
 set incsearch
 set ignorecase
@@ -152,6 +155,13 @@ noremap <leader>s :w<CR>
 " leader then q quits file
 noremap <leader>q :q<CR>
 
+" vim-rspec Mappings
+
+let g:rspec_command = '!clear; zeus rspec {spec}'
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>c :call RunNearestSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""
 " Vundle Packages
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -169,20 +179,27 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-rails'
 Plugin 'ggreer/the_silver_searcher'
-Plugin 'tpope/vim-fugitive'
 Plugin 'pbrisbin/vim-mkdir'
-Plugin 'tpope/vim-endwise'
 Plugin 'powerline/powerline'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-surround'
 Plugin 'gregsexton/MatchTag'
 Plugin 'othree/html5.vim'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-commentary'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'keith/rspec.vim'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -193,6 +210,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Gets rid of NERD Tree when opening file with ctrlp
+let g:ctrlp_dont_split = 'NERD'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
@@ -206,6 +226,9 @@ augroup vimrcEx
   " Change Line Numbers when in Insert/Normal
   autocmd InsertEnter * :set number
   autocmd InsertLeave * :set relativenumber
+
+  " Updates Markdown files to use syntax highlighting
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
   " Erases unnecessary whitespace
   autocmd BufWritePre * :%s/\s\+$//e
@@ -228,4 +251,18 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
   " Bind \ to grep
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Other
+""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
 endif
