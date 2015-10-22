@@ -139,3 +139,8 @@ javar() {
   javac "$1.java"
   java $1
 }
+
+base() {
+  cp ~/apps/interview/Base.java "$1.java"
+  sed -i -e "s/Base/$1/" "$1.java"
+}
