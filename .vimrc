@@ -200,6 +200,7 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'keith/rspec.vim'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -213,6 +214,8 @@ let g:syntastic_check_on_wq = 0
 
 " Gets rid of NERD Tree when opening file with ctrlp
 let g:ctrlp_dont_split = 'NERD'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|ico|git|svn))$'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
