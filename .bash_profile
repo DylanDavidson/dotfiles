@@ -125,6 +125,9 @@ alias drafts="jekyll serve --watch --drafts"
 # ROI Revolution stuff
 alias rubodiff="~/RailsApps/rubodiff"
 alias dashdiff="~/RailsApps/dashdiff"
+alias cdedge="cd ~/RailsApps/edge/"
+alias cddash="cd ~/RailsApps/dash/"
+alias chrome="open -a Google\ Chrome"
 
 # Kills all Rails development related processes
 killrails() {

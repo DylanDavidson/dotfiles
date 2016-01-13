@@ -111,6 +111,9 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+" Mapping for copy to clipboard
+vnoremap <C-c> :w !pbcopy<cr><cr>
+
 " Makes enter and Shift-Enter add newlines in Command Mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
