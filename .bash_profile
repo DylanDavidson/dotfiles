@@ -114,6 +114,7 @@ alias am="rake apartment:migrate"
 alias ar="rake apartment:rollback"
 alias m="rake db:migrate"
 alias r="rspec spec/"
+alias simplecov="chrome coverage/index.html"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -128,6 +129,9 @@ alias dashdiff="~/RailsApps/dashdiff"
 alias cdedge="cd ~/RailsApps/edge/"
 alias cddash="cd ~/RailsApps/dash/"
 alias chrome="open -a Google\ Chrome"
+
+# Postgres
+alias postmaster="rm /usr/local/var/postgres/postmaster.pid"
 
 # Kills all Rails development related processes
 killrails() {
@@ -146,4 +150,26 @@ javar() {
 base() {
   cp ~/apps/interview/Base.java "$1.java"
   sed -i "s/Base/$1/" "$1.java"
+}
+
+proverb() {
+  NUMBER_WORDS=${1:-4}
+  echo "
+    of to in it is be as at so we he by or on do if me my up an go no us am the and for are but
+    not you all any can had her was one our out day get has him his how man new now old see two
+    way who boy did its let put say she too use inc med com box sun air rug" |
+    tr -s '[[:punct:][:space:]]' '\n' |
+    gshuf |
+    head -n $NUMBER_WORDS |
+    xargs
+}
+
+words() {
+  NUMBER_WORDS=${1:-4}
+  cat /usr/share/dict/words | gshuf | head -n $NUMBER_WORDS | xargs
+}
+
+connectives() {
+  NUMBER_WORDS=${1:-4}
+  cat /usr/share/dict/connectives| gshuf | head -n $NUMBER_WORDS | xargs
 }

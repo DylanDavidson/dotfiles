@@ -131,7 +131,9 @@ nnoremap S <S-a>
 " Maps q to b for easier word navigation
 noremap q b
 
+" Mappings related to finding tags
 vnoremap f <C-]>
+nnoremap <c-]> :execute 'tjump' expand('<cword>')<CR>
 
 inoremap <Up>/ ?
 
@@ -157,6 +159,10 @@ noremap <leader>r :Gmove<space>
 noremap <leader>s :w<CR>
 " leader then q quits file
 noremap <leader>q :q<CR>
+" leader then g switches between specs and class
+noremap <leader>g :A<CR>
+" leader leader switches between current file and previous file
+noremap <leader><leader> <C-^>
 
 " vim-rspec Mappings
 
