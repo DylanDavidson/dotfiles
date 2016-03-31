@@ -9,9 +9,10 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
 if ENV['RAILS_ENV']
   require 'rubygems'
-  require 'hirb'
-  Hirb.enable
 end
+
+require 'hirb'
+Hirb.enable
 
 # Uncomment the following line if you want to remove SQL query output:
 # ActiveRecord::Base.logger.level = 1 if defined? ActiveRecord::Base

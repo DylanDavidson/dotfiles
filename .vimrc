@@ -210,6 +210,7 @@ Plugin 'keith/rspec.vim'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
+Plugin 'rhysd/committia.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

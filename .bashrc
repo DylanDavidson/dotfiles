@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- == *i* ]] || return
+
 export PATH=$PATH:$HOME/.rvm/bin
 
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'

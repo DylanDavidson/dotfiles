@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- == *i* ]] || return
+
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
@@ -115,6 +118,7 @@ alias ar="rake apartment:rollback"
 alias m="rake db:migrate"
 alias r="rspec spec/"
 alias simplecov="chrome coverage/index.html"
+alias killserver="ps aux | grep '[r]ails s' | awk '{print $2}' | xargs kill -9"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
