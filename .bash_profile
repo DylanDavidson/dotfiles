@@ -87,6 +87,9 @@ fi     # prints current branch
 PS1+="\[$COLOR_WHITE\]]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, else '$'
 export PS1
 
+# Use vim from Homebrew
+alias vim="/usr/local/Cellar/vim/7.4.1468/bin/vim"
+
 # Unix
 alias la="ls -a"
 alias bp="source ~/.bash_profile"
@@ -118,7 +121,7 @@ alias ar="rake apartment:rollback"
 alias m="rake db:migrate"
 alias r="rspec spec/"
 alias simplecov="chrome coverage/index.html"
-alias killserver="ps aux | grep '[r]ails s' | awk '{print $2}' | xargs kill -9"
+alias killserver="ps aux | grep 'rails s' | awk '{print $2}' | xargs kill -9"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -143,6 +146,10 @@ killrails() {
   pkill ruby
   pkill resque
   pkill faye
+  pkill sidekiq
+  pkill rails
+  pkill node
+  pkill jruby
 }
 
 # Java :(

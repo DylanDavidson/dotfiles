@@ -35,6 +35,7 @@
 [user]
 	name = Dylan Davidson
 	email = ddavidson621@gmail.com
+	signingkey = 783EEE70
 [fetch]
 	prune = true
 [alias]

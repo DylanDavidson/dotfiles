@@ -1,8 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""
-
-let mapleader = "," " Sets leader to be comma
+" Sets leader to be comma
+let mapleader = ","
 
 " Sets statusline
  set laststatus=2
@@ -14,36 +14,29 @@ set noswapfile " More space wasting annoying files, don't need em
 set history=50 " Shouldn't need more than the last 50 commands
 set autowrite " Automatically writes files before commands
 set backspace=indent,eol,start " Makes backspace act like regular editors
-
 " Softtabs, 2 spaces (Ruby!)
 set expandtab
 set tabstop=2
 set shiftround
 set shiftwidth=2
-
 " Relative Line Numbers, 5 columns wide
 set relativenumber
 set numberwidth=5
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-
 " Highlight current line of cursor
 set cursorline
-
-set wildmenu " Allows tab completion for commands
-
-set hidden " Hides annoying error messages
-
+" Allows tab completion for commands
+set wildmenu
+" Hides annoying error messages
+set hidden
+set confirm
 " Supposed to prevent the 'File has been changed since reading it'
 set autoread
-
 " Make search nicer
 set incsearch
 set ignorecase
-
 " Gets rid of extra new line
 set noeol
 set fileformats+=dos
@@ -90,8 +83,12 @@ function! NumberToggle()
   endif
 endfunc
 """""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
+" Mappings/Key Bindings
 """""""""""""""""""""""""""""""""""""""""""""""
+
+" Auto-Save when exiting insert mode
+inoremap <C-[> <ESC>:w<CR>
+
 " Toggle Line Numbers
 nnoremap <C-n> :call NumberToggle()<cr>
 
@@ -211,16 +208,12 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
 Plugin 'rhysd/committia.vim'
+Plugin 'vim-utils/vim-ruby-fold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 filetype plugin indent on    " required
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Gets rid of NERD Tree when opening file with ctrlp
 let g:ctrlp_dont_split = 'NERD'

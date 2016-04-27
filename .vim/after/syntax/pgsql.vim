@@ -192,6 +192,7 @@ syn match pgsqlKeyword      "\<\(restart\|continue\)\_s\+identity\>"
 syn match pgsqlKeyword      "\<vacuum\(\_s\+full\|\_s\+freeze\|\_s\+verbose\)*\>"
 
 syn keyword pgsqlKeyword   and alias asc
+syn keyword pgsqlKeyword   both
 syn keyword pgsqlKeyword   cascade current_date current_time current_timestamp
 syn keyword pgsqlKeyword   checkpoint check cost
 syn keyword pgsqlKeyword   check column columns constraint
@@ -202,7 +203,7 @@ syn keyword pgsqlKeyword   force
 syn keyword pgsqlKeyword   group global get
 syn keyword pgsqlKeyword   having
 syn keyword pgsqlKeyword   immutable inherits inline intersect
-syn keyword pgsqlKeyword   leakproof lock local limit load loop listen lateral
+syn keyword pgsqlKeyword   leakproof lock local limit load loop listen lateral lower
 syn keyword pgsqlKeyword   notify next nowait
 syn keyword pgsqlKeyword   out open offset
 syn keyword pgsqlKeyword   password privilege
@@ -210,7 +211,7 @@ syn keyword pgsqlKeyword   perform
 syn keyword pgsqlKeyword   replace references restrict returning
 syn keyword pgsqlKeyword   reassing return
 syn keyword pgsqlKeyword   strict sequences stable setof
-syn keyword pgsqlKeyword   truncate tranaction trigger trusted
+syn keyword pgsqlKeyword   truncate tranaction trigger trusted trim
 syn keyword pgsqlKeyword   unique unlisten
 syn keyword pgsqlKeyword   version volatile
 syn keyword pgsqlKeyword   window
