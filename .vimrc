@@ -128,6 +128,12 @@ nnoremap S <S-a>
 " Maps q to b for easier word navigation
 noremap q b
 
+"""" Folding Mappings
+" zo opens all folds
+noremap zo zR
+" zc closes all folds
+noremap zc zM
+
 " Mappings related to finding tags
 vnoremap f <C-]>
 nnoremap <c-]> :execute 'tjump' expand('<cword>')<CR>
@@ -208,7 +214,6 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
 Plugin 'rhysd/committia.vim'
-Plugin 'vim-utils/vim-ruby-fold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
