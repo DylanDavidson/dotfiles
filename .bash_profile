@@ -88,7 +88,7 @@ PS1+="\[$COLOR_WHITE\]]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, el
 export PS1
 
 # Use vim from Homebrew
-alias vim="/usr/local/Cellar/vim/7.4.1468/bin/vim"
+# alias vim="/usr/local/Cellar/vim/7.4.1468/bin/vim"
 
 # Unix
 alias la="ls -a"
