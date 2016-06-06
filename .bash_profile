@@ -25,9 +25,6 @@ fi
 # Shows apple and computer info when opening new Terminal window
 archey --color
 
-# Enables hub alias for git
-eval "$(hub alias -s)"
-
 alias ls='ls -G'
 alias be='bundle exec'
 alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
@@ -139,6 +136,10 @@ alias chrome="open -a Google\ Chrome"
 
 # Postgres
 alias postmaster="rm /usr/local/var/postgres/postmaster.pid"
+
+readmarkdown() {
+  markdown $1 | lynx -stdin
+}
 
 # Kills all Rails development related processes
 killrails() {

@@ -63,7 +63,7 @@ endif
 " Colors and Themes
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme sexy-railscasts-256
+colorscheme gruvbox
 
 " Adds a red bar at 101st column to indicate line is too long
 if exists('+colorcolumn')
