@@ -7,23 +7,27 @@ fi
 if [ -f ~/.profile ]; then
   source ~/.profile
 fi
+# Aliases to make SSHing easier (THIS FILE SHOULD NOT BE UNDER SOURCE CONTROL)
 if [ -f ~/.sshaliases ]; then
   source ~/.sshaliases
+fi
+# Aliases to make various processes at my job easier. (THIS FILE SHOULD NOT BE UNDER SOURCE CONTROL)
+if [ -f ~/.work ]; then
+  source ~/.work
+fi
+
+# Determine OS and load OS specific configs
+operating_system="$(uname)"
+if [[ $operating_system =~ "Linux" ]]; then
+  source ~/.linux
+elif [[ $operating_system =~ "Darwin" ]]; then # OS X returns "Darwin" from uname
+  source ~/.osx
 fi
 
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cacert.pem
 
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-    . `brew --prefix`/etc/bash_completion.d/git-completion.bash
-    PS1='[\W$(__git_ps1 " (%s)")]\$ ';
-fi
-
-if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-    . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
-fi
-
-# Shows apple and computer info when opening new Terminal window
-archey --color
+# Shows OS and other computer info when opening new Terminal window
+archey
 
 alias ls='ls -G'
 alias be='bundle exec'
@@ -84,9 +88,6 @@ fi     # prints current branch
 PS1+="\[$COLOR_WHITE\]]\[$COLOR_BLUE\] \$\[$COLOR_RESET\] "   # '#' for root, else '$'
 export PS1
 
-# Use vim from Homebrew
-# alias vim="/usr/local/Cellar/vim/7.4.1468/bin/vim"
-
 # Unix
 alias la="ls -a"
 alias bp="source ~/.bash_profile"
@@ -108,9 +109,7 @@ alias gad="git add ."
 
 alias rhh="git reset --hard HEAD"
 alias rhh1="git reset --hard HEAD~1"
-
-# Bundler
-alias b="bundle"
+# Bundler alias b="bundle"
 
 # Rails
 alias am="rake apartment:migrate"

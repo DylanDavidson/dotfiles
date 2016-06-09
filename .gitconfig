@@ -24,7 +24,7 @@
   whitespace = warn
 	excludesfile = ~/.gitignore
 	editor = vim
-  pager = "diff-highlight | diff-so-fancy | less --tabs=1,5 -R"
+  ; pager = "diff-highlight | diff-so-fancy | less --tabs=1,5 -R"
 [push]
 	default = current
 [rerere]
@@ -34,7 +34,7 @@
 	autocorrect = 1
 [user]
 	name = Dylan Davidson
-	email = ddavidson621@gmail.com
+	email = dylandavidson@google.com
 	signingkey = 783EEE70
 [fetch]
 	prune = true

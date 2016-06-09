@@ -63,7 +63,6 @@ endif
 " Colors and Themes
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme gruvbox
 
 " Adds a red bar at 101st column to indicate line is too long
 if exists('+colorcolumn')
@@ -189,6 +188,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'morhetz/gruvbox'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ggreer/the_silver_searcher'
@@ -224,6 +224,11 @@ filetype plugin indent on    " required
 let g:ctrlp_dont_split = 'NERD'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|ico|git|svn))$'
+
+" colorscheme
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark='soft'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
