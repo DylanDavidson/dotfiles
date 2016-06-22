@@ -1,3 +1,15 @@
+if [ -f ~/dotfiles/bash/aliases.sh ]; then
+  source ~/dotfiles/bash/aliases.sh
+fi
+
+# Determine OS and load OS specific configs
+operating_system="$(uname)"
+if [[ $operating_system =~ "Linux" ]]; then
+  source ~/dotfiles/bash/linux.sh
+elif [[ $operating_system =~ "Darwin" ]]; then # OS X returns "Darwin" from uname
+  source ~/dotfiles/bash/osx.sh
+fi
+
 # If not running interactively, don't do anything
 [[ $- == *i* ]] || return
 
@@ -10,12 +22,6 @@ if [ -f ~/dotfiles/bash/ps1.sh ]; then
   source ~/dotfiles/bash/ps1.sh
 fi
 
-if [ -f ~/dotfiles/bash/aliases.sh ]; then
-  source ~/dotfiles/bash/aliases.sh
-fi
-
-
-
 # Aliases to make SSHing easier (THIS FILE SHOULD NOT BE UNDER SOURCE CONTROL)
 if [ -f ~/.sshaliases ]; then
   source ~/.sshaliases
@@ -26,13 +32,6 @@ if [ -f ~/.work ]; then
   source ~/.work
 fi
 
-# Determine OS and load OS specific configs
-operating_system="$(uname)"
-if [[ $operating_system =~ "Linux" ]]; then
-  source ~/dotfiles/bash/linux.sh
-elif [[ $operating_system =~ "Darwin" ]]; then # OS X returns "Darwin" from uname
-  source ~/dotfiles/bash/osx.sh
-fi
 
 # Shows OS and other computer info when opening new Terminal window
 archey

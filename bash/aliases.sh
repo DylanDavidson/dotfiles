@@ -8,6 +8,10 @@ alias ls="ls -G -a --color"
 alias bp="source ~/.bash_profile"
 # Open BASH profile in VIM for editing
 alias bpe="vim ~/.bash_profile"
+# Opens BASH aliases for editing
+alias aliases="vim ~/dotfiles/bash/aliases.sh"
+# Opens BASH PS1 for editing
+alias ps1="vim ~/dotfiles/bash/ps1.sh"
 # Opens VIMRC in VIM for editing
 alias ve="vim ~/.vimrc"
 # Open current directory in VIM for editing
