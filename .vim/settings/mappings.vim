@@ -44,8 +44,8 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
 " Makes enter and Shift-Enter add newlines in Command Mode
+nnoremap <Enter> o<Esc>
 nnoremap <S-Enter> O<Esc>
-nnoremap <CR> o<Esc>
 
 " Makes a go to start of line, and s go to end of line
 nnoremap a ^
@@ -60,7 +60,7 @@ nnoremap K }
 nnoremap f :execute 'tjump' expand('<cword>')<CR>
 
 " Use backslash to globally search using Silver Searcher
-nnoremap \ :Ag<Space>
+nnoremap \ :Ack<Space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Insert Mode

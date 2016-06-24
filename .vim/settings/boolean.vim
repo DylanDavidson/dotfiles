@@ -1,4 +1,3 @@
-" Make vim not vi compatible, and become iMproved
 set nocompatible
 " Disables backup files, saves space and time
 set nobackup
@@ -34,3 +33,5 @@ set ignorecase
 set smartcase
 " Gets rid of new line at end of file
 set noeol
+" Don't wrap text by default
+set nowrap

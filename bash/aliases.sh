@@ -19,9 +19,11 @@ alias v="vim ."
 # Displays pretty calendar with current date highlighted
 alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
 # Opens given HTML file in Chrome from command line
-alias chrome="open -a Google\ Chrome"
+alias chrome="open Google\ Chrome"
 # Flushes DNS
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+# Makes autojumping easier
+alias j="autojump"
 # Parses given Markdown file into HTML and opens on command line
 readmarkdown() {
   markdown $1 | lynx -stdin
