@@ -24,6 +24,8 @@ alias chrome="open Google\ Chrome"
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 # Makes autojumping easier
 alias j="autojump"
+# tmux -2 ensures that 256 colors will be used
+alias tmux="tmux -2"
 # Parses given Markdown file into HTML and opens on command line
 readmarkdown() {
   markdown $1 | lynx -stdin

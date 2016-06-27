@@ -16,4 +16,5 @@ source ~/.vim/settings/plugins.vim
 " Load VIM Autocommands
 source ~/.vim/settings/autocommands.vim
 
-colorscheme solarized
+let g:gruvbox_contrast_dark='soft'
+colorscheme gruvbox
