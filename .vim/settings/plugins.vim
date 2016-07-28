@@ -27,10 +27,12 @@ Plugin 'tpope/vim-commentary'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'rhysd/committia.vim' " Shows diff and status when committing
+Plugin 'janko-m/vim-test'
 " Language specific
 Plugin 'kchmck/vim-coffee-script' " Syntax/Indenting for CoffeeScript
 Plugin 'othree/html5.vim' " Syntax/Indenting for HTML5
 Plugin 'elzr/vim-json' " Syntax/Indenting for JSON
+Plugin 'elixir-lang/vim-elixir'
 " Ruby stuff
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'keith/rspec.vim'
