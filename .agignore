@@ -1,0 +1,11 @@
+.git
+.svn
+.hg
+.swp
+.ico
+node_modules
+*.png
+*.jpg
+*.exe
+*.recordio
+*.class

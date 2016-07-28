@@ -4,7 +4,10 @@ let g:rspec_command = '!clear; zeus rspec {spec}'
 " Gets rid of NERD Tree when opening file with ctrlp
 let g:ctrlp_reuse_window = 'NERD'
 " Tells CtrlP to ignore files matching given pattern
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = {
+\ 'dir': '\v[\/]\.(swp|ico|git|svn|hg)$',
+\ 'file': '\v\.(exe|so|dll|node_modules|png)',
+\ }
 " Use Silver Searcher for CtrlP since it's faster (I think)
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " Disable caching for CtrlP (not sure why)

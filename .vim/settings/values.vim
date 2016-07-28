@@ -10,9 +10,9 @@ set statusline=%f\ (%Y)\ %<%=\ LINE\ %l/%L,COLUMN\ %02c
 " Maintains history of last 50 commands entered
 set history=50
 " <Tab> character becomes 4 spaces
-set tabstop=4
+set tabstop=2
 " Autoindent to 4 spaces by default
-set shiftwidth=4
+set shiftwidth=2
 " Makes backspace act like regular editors
 set backspace=indent,eol,start
 " Number of lines between cursor and bottom/top of screen when scrolling
@@ -22,8 +22,8 @@ set colorcolumn=101,102,103
 " Allows cursor to be placed one character beyond the end of the line
 set virtualedit=onemore
 " File types to ignore when autocompleting
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*.so,*.swp,*.zip,*.png,*.jpg,*.class
 " Command to use for grep (uses Silver Searcher)
 set grepprg=ag\ --nogroup\ --nocolor
-
-
+" Prevents message that requires hitting Enter to open file
+set shortmess+=F

@@ -15,7 +15,6 @@ Plugin 'ggreer/the_silver_searcher' " Better grep
 Plugin 'mileszs/ack.vim' " Used to make silver searcher work
 Plugin 'pbrisbin/vim-mkdir' " Auto creates directories when making files
 Plugin 'kristijanhusak/vim-multiple-cursors' " Sublime style multiple cursors
-Plugin 'vim-scripts/AutoComplPop' " Janky auto completion
 Plugin 'gregsexton/MatchTag' " Highlights closing HTML tag
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-fugitive'

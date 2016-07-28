@@ -5,3 +5,5 @@ export PATH=/usr/local/bin/psql/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 # Added Heroku Toolbelt to PATH
 export PATH="/usr/local/heroku/bin:$PATH"
+# Adds Brew Cellar to path
+export PATH="~/.linuxbrew/Cellar:$PATH"

@@ -28,8 +28,8 @@ if [ -f ~/.sshaliases ]; then
 fi
 
 # Aliases to make various processes at my job easier. (THIS FILE SHOULD NOT BE UNDER SOURCE CONTROL)
-if [ -f ~/.work ]; then
-  source ~/.work
+if [ -f ~/work.sh ]; then
+  source ~/work.sh
 fi
 
 

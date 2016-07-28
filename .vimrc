@@ -16,5 +16,10 @@ source ~/.vim/settings/plugins.vim
 " Load VIM Autocommands
 source ~/.vim/settings/autocommands.vim
 
+" Work specific vim settings (NOT UNDER SOURCE CONTROL)
+if !empty(glob("~/work.vim"))
+  source ~/work.vim
+endif
+
 let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox

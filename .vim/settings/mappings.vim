@@ -4,6 +4,8 @@
 
 " Maps q to b for easier word navigation
 noremap q b
+" Maps capital Q to do recording, since q is now for word navigation
+noremap Q q
 
 """" Folding Mappings
 " zo opens all folds
@@ -19,15 +21,8 @@ noremap <leader>r :Gmove<space>
 noremap <leader>s :w<CR>
 " leader then q quits file
 noremap <leader>q :q<CR>
-" leader then g switches between specs and class
-noremap <leader>g :A<CR>
 " leader leader switches between current file and previous file
 noremap <leader><leader> <C-^>
-
-" vim-rspec Mappings
-noremap <leader>t :call RunCurrentSpecFile()<CR>
-noremap <leader>c :call RunNearestSpec()<CR>
-noremap <leader>a :call RunAllSpecs()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Normal Mode
@@ -97,6 +92,3 @@ inoremap "      ""<Left>
 
 " Mapping for copy to clipboard
 vnoremap <C-c> :w !pbcopy<cr>
-
-" Finds reference using ctags
-vnoremap f <C-]>
