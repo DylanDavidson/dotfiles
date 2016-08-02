@@ -12,6 +12,8 @@ alias bpe="vim ~/.bash_profile"
 alias aliases="vim ~/dotfiles/bash/aliases.sh"
 # Opens BASH PS1 for editing
 alias ps1="vim ~/dotfiles/bash/ps1.sh"
+# Open i3 config for editing
+alias i3e="vim ~/.config/i3/config"
 # Opens VIMRC in VIM for editing
 alias ve="vim ~/.vimrc"
 # Open current directory in VIM for editing
@@ -26,6 +28,7 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias j="autojump"
 # tmux -2 ensures that 256 colors will be used
 alias tmux="tmux -2"
+alias ag="ag --path-to-agignore ~/.agignore"
 # Parses given Markdown file into HTML and opens on command line
 readmarkdown() {
   markdown $1 | lynx -stdin

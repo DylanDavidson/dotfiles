@@ -7,4 +7,5 @@ export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 # Adds NPM bin to PATH
 export PATH="~/.npm-packages/bin:$PATH"
-
+# Adds Brew Cellar to path
+export PATH="~/.linuxbrew/Cellar:$PATH"
