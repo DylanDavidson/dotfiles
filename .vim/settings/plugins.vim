@@ -15,7 +15,7 @@ Plugin 'ggreer/the_silver_searcher' " Better grep
 Plugin 'mileszs/ack.vim' " Used to make silver searcher work
 Plugin 'pbrisbin/vim-mkdir' " Auto creates directories when making files
 Plugin 'kristijanhusak/vim-multiple-cursors' " Sublime style multiple cursors
-Plugin 'vim-scripts/AutoComplPop' " Janky auto completion
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'gregsexton/MatchTag' " Highlights closing HTML tag
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-fugitive'
@@ -33,8 +33,10 @@ Plugin 'janko-m/vim-test'
 Plugin 'kchmck/vim-coffee-script' " Syntax/Indenting for CoffeeScript
 Plugin 'othree/html5.vim' " Syntax/Indenting for HTML5
 Plugin 'elzr/vim-json' " Syntax/Indenting for JSON
+" Elixir
 Plugin 'elixir-lang/vim-elixir'
-" Ruby stuff
+Plugin 'liquidz/vivi.vim'
+" Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'keith/rspec.vim'
 

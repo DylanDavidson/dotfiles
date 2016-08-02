@@ -5,3 +5,6 @@ export PATH=/usr/local/bin/psql/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 # Added Heroku Toolbelt to PATH
 export PATH="/usr/local/heroku/bin:$PATH"
+# Adds NPM bin to PATH
+export PATH="~/.npm-packages/bin:$PATH"
+

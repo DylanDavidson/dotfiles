@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/dylandavidson/apps/elixir/kv'
-let g:netrw_dirhist_2='/Users/dylandavidson/dotfiles/.vim/ftplugin'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/dylandavidson/RailsApps/dash'
+let g:netrw_dirhist_2='/Users/dylandavidson/RailsApps/edge'
+let g:netrw_dirhist_3='/Users/dylandavidson'
+let g:netrw_dirhist_4='/Users/dylandavidson/dotfiles'
+let g:netrw_dirhist_5='/Users/dylandavidson/apps/kwm'
+let g:netrw_dirhist_6='/Users/dylandavidson/apps/kwm/examples'
+let g:netrw_dirhist_7='/Users/dylandavidson/notes/ml'
+let g:netrw_dirhist_8='/Users/dylandavidson/notes'
+let g:netrw_dirhist_9='/Users/dylandavidson/apps/pixelish'

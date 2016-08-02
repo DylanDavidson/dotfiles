@@ -25,5 +25,6 @@ set virtualedit=onemore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " Command to use for grep (uses Silver Searcher)
 set grepprg=ag\ --nogroup\ --nocolor
-
+" Function for autocompletion
+set omnifunc=syntaxcomplete#Complete
 
