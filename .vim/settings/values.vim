@@ -22,8 +22,10 @@ set colorcolumn=101,102,103
 " Allows cursor to be placed one character beyond the end of the line
 set virtualedit=onemore
 " File types to ignore when autocompleting
-set wildignore+=*.so,*.swp,*.zip,*.png,*.jpg,*.class
+set wildignore+=*.so,*.swp,*.zip,*.png,*.jpg,*.gif,*.class
 " Command to use for grep (uses Silver Searcher)
 set grepprg=ag\ --nogroup\ --nocolor
 " Prevents message that requires hitting Enter to open file
 set shortmess+=F
+" Adds spell check for English
+set spell spelllang=en_us

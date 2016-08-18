@@ -9,3 +9,5 @@ node_modules
 *.exe
 *.recordio
 *.class
+*/clientlegacy/*
+*/freebird/*
