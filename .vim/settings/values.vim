@@ -25,6 +25,8 @@ set virtualedit=onemore
 set wildignore+=*.so,*.swp,*.zip,*.png,*.jpg,*.gif,*.class
 " Command to use for grep (uses Silver Searcher)
 set grepprg=ag\ --nogroup\ --nocolor
+" Function for autocompletion
+set omnifunc=syntaxcomplete#Complete
 " Prevents message that requires hitting Enter to open file
 set shortmess+=F
 " Adds spell check for English
