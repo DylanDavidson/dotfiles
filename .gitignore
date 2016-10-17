@@ -10,3 +10,5 @@ workbench.xmi
 post-checkout
 .eclimrc-work1
 .eclimrc-work2
+libbase-java8.jar
+libcollect-java8.jar
