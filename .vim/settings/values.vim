@@ -9,9 +9,9 @@ set laststatus=2
 set statusline=%f\ (%Y)\ %<%=\ LINE\ %l/%L,COLUMN\ %02c
 " Maintains history of last 50 commands entered
 set history=50
-" <Tab> character becomes 4 spaces
+" <Tab> character becomes 2 spaces
 set tabstop=2
-" Autoindent to 4 spaces by default
+" Autoindent to 2 spaces by default
 set shiftwidth=2
 " Makes backspace act like regular editors
 set backspace=indent,eol,start

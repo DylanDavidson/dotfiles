@@ -16,8 +16,7 @@ alias ps1="vim ~/dotfiles/bash/ps1.sh"
 alias i3e="vim ~/.config/i3/config"
 # Opens VIMRC in VIM for editing
 alias ve="vim ~/.vimrc"
-# Open current directory in VIM for editing
-alias v="vim ."
+# Open current directory in VIM for editing alias v="vim ."
 # Displays pretty calendar with current date highlighted
 alias cal="cal | grep -C6 --color '\b$(date +%e)\b'"
 # Opens given HTML file in Chrome from command line
@@ -33,6 +32,7 @@ alias ag="ag --path-to-agignore ~/.agignore"
 readmarkdown() {
   markdown $1 | lynx -stdin
 }
+alias pythonhttpserver="python -m SimpleHTTPServer"
 
 ##
 #### GIT
