@@ -1,3 +1,7 @@
+if [ -f ~/dotfiles/bash/functions.sh ]; then
+  source ~/dotfiles/bash/functions.sh
+fi
+
 if [ -f ~/dotfiles/bash/aliases.sh ]; then
   source ~/dotfiles/bash/aliases.sh
 fi
@@ -32,9 +36,10 @@ if [ -f ~/work.sh ]; then
   source ~/work.sh
 fi
 
-
 # Shows OS and other computer info when opening new Terminal window
-archey
+if has_command archey; then
+  archey
+fi
 
 # History Settings
 export HISTFILESIZE=1000000000
