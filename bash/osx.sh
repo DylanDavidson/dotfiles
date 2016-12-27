@@ -12,3 +12,4 @@ fi
 # Always list hidden files, and use color
 alias ls="ls -G -a"
 alias usr_local="sudo chown -R $USER:admin /usr/local"
+alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"

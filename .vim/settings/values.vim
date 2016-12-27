@@ -31,3 +31,4 @@ set omnifunc=syntaxcomplete#Complete
 set shortmess+=f
 " Adds spell check for English
 set spell spelllang=en_us
+
