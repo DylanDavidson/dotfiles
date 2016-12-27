@@ -28,6 +28,6 @@ set grepprg=ag\ --nogroup\ --nocolor
 " Function for autocompletion
 set omnifunc=syntaxcomplete#Complete
 " Prevents message that requires hitting Enter to open file
-set shortmess+=F
+set shortmess+=f
 " Adds spell check for English
 set spell spelllang=en_us
