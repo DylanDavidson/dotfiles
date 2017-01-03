@@ -1,3 +1,5 @@
+source ~/.nvm/nvm.sh
+
 if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
     . `brew --prefix`/etc/bash_completion.d/git-completion.bash
     PS1='[\W$(__git_ps1 " (%s)")]\$ ';
@@ -10,3 +12,4 @@ fi
 # Always list hidden files, and use color
 alias ls="ls -G -a"
 alias usr_local="sudo chown -R $USER:admin /usr/local"
+alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"

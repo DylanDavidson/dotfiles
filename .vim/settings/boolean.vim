@@ -35,3 +35,5 @@ set smartcase
 set noeol
 " Don't wrap text by default
 set nowrap
+
+set smarttab

@@ -22,11 +22,20 @@ let g:ackprg = 'ag --smart-case'
 """"
 "" Vivi
 """"
+
 let g:vivi_enable_omni_completion = 1
 let g:neocomplete#enable_at_startup = 1
 
 """"
 "" YouCompleteMe
+""""
+
+let g:ycm_min_num_of_chars_for_completion = 0
 
 """"
-let g:ycm_min_num_of_chars_for_completion = 0
+"" Vim JSX (React)
+""""
+
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0
+
