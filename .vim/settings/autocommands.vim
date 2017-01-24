@@ -6,6 +6,9 @@ augroup AutoCommands
   " Erases unnecessary whitespace
   autocmd BufWritePre * :%s/\s\+$//e
 
+  " Runs neomake after every file save
+  autocmd BufWritePost * Neomake
+
   " Reload buffer when focus is gained
   au FocusGained * silent redraw!
 augroup END

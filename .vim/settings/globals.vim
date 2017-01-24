@@ -33,6 +33,21 @@ let g:neocomplete#enable_at_startup = 1
 let g:ycm_min_num_of_chars_for_completion = 0
 
 """"
+"" Neomake
+""""
+
+let g:neomake_list_height = 1
+let g:neomake_open_list = 2
+let neomake_error_format = '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
+let g:neomake_javascript_eslint_maker = {
+      \ 'errorformat': neomake_error_format,
+      \ 'exe': 'eslint',
+      \ 'args': ['-f', 'compact', '--rule', '{"no-console":[1]}'],
+      \ }
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+
+""""
 "" Vim JSX (React)
 """"
 

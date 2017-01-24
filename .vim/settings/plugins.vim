@@ -8,6 +8,7 @@ call vundle#begin()
 " Allows Vundle to manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'DylanDavidson/neomake' " Syntax Linter
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim' " Easy file searching in project
 Plugin 'scrooloose/nerdtree' " Better tree navigator for file structure
