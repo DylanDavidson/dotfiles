@@ -32,6 +32,11 @@ readmarkdown() {
 }
 alias pythonhttpserver="python -m SimpleHTTPServer"
 
+# @param 1 String to search for in the files.
+findfileswithstring() {
+  grep -rl $1 .
+}
+
 ##
 #### TMUX
 ##
@@ -46,10 +51,12 @@ alias tmuxload="tmux source-file ./tmux.session"
 
 # Shorthand for accessing git in general
 alias g="git"
-# Shorthand for commiting (opening vim for commit message)
+# Shorthand for committing (opening vim for commit message)
 alias gc="git commit"
-# Shorthand for quickly ammending the last commit with no change in the message
+# Shorthand for quickly ammnding the last commit with no change in the message
 alias gca="git commit --amend --no-edit"
+# Shorthand for quickly adding all modified files and amending the last commit.
+alias gaca="git add . && git commit --amend --no-edit"
 # Shorthand for status of git branch
 alias s="git s"
 # Shorthand for diff of changes in git branch

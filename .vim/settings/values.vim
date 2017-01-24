@@ -17,7 +17,7 @@ set shiftwidth=2
 set backspace=indent,eol,start
 " Number of lines between cursor and bottom/top of screen when scrolling
 set scrolloff=18
-" Puts a red column at 81 characters to indicate when a line is too long
+" Puts a red column at 101 characters to indicate when a line is too long
 set colorcolumn=101,102,103
 " Allows cursor to be placed one character beyond the end of the line
 set virtualedit=onemore
