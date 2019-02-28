@@ -12,3 +12,4 @@ post-checkout
 .eclimrc-work2
 libbase-java8.jar
 libcollect-java8.jar
+.eslintrc

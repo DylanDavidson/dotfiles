@@ -34,7 +34,7 @@ alias pythonhttpserver="python -m SimpleHTTPServer"
 
 # @param 1 String to search for in the files.
 findfileswithstring() {
-  grep -rl $1 .
+  grep -r $1 .
 }
 
 ##
@@ -55,6 +55,8 @@ alias g="git"
 alias gc="git commit"
 # Shorthand for quickly ammnding the last commit with no change in the message
 alias gca="git commit --amend --no-edit"
+# Commit all edited files with message
+alias gcam="git commit -am"
 # Shorthand for quickly adding all modified files and amending the last commit.
 alias gaca="git add . && git commit --amend --no-edit"
 # Shorthand for status of git branch

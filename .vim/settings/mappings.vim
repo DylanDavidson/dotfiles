@@ -91,4 +91,4 @@ inoremap "      ""<Left>
 """"""""""""""""""""""""""""""""""""""""""""""""
 
 " Mapping for copy to clipboard
-vnoremap <C-c> :w !pbcopy<cr>
+vnoremap <C-c> "+y

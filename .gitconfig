@@ -25,6 +25,8 @@
 	excludesfile = ~/.gitignore
 	editor = vim
   ; pager = "diff-highlight | diff-so-fancy | less --tabs=1,5 -R"
+[diff]
+  compactionHeuristic = true
 [push]
 	default = current
 [rerere]
@@ -58,6 +60,8 @@
   rpo = remote prune origin
   mm = merge master
   md = merge develop
+  resolveconflictsours = !git diff --name-only --diff-filter=U | xargs git co --ours --
+  resolveconflictstheirs = !git diff --name-only --diff-filter=U | xargs git co --theirs --
   kermit = commit
   poosh = push
   pr = pull-request

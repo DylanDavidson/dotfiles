@@ -44,3 +44,5 @@ fi
 # History Settings
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -97,7 +97,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Lock screen using i3lock
-bindsym Mod1+Mod4+l exec "i3lock -c 689d6a"
+bindsym Mod1+Mod4+l exec /usr/local/google/home/dylandavidson/.config/i3/i3lock.sh
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -127,18 +127,19 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+plus exec amixer -D pulse sset Master 8%+
-bindsym $mod+minus exec amixer -D pulse sset Master 8%-
+bindsym $mod+plus exec amixer -q sset Master 8%+
+bindsym $mod+minus exec amixer -q sset Master 8%-
 bindsym $mod+m exec amixer -D pulse sset Master toggle
 
 hide_edge_borders both
 
-workspace 1 output DVI-I-1
-workspace 3 output DVI-I-1
+workspace 1 output DP-1
+workspace 3 output DP-1
 
-workspace 2 output DP-1
-workspace 4 output DP-1
+workspace 2 output DVI-I-1
+workspace 4 output DVI-I-1
 
+exec --no-startup-id xrandr --output DP-1 --left-of DVI-I-1
 exec --no-startup-id i3-msg 'workspace 1; rxvt-terminal'
 exec --no-startup-id i3-msg 'workspace 2; google-chrome --profile-directory="Default"'
 exec --no-startup-id i3-msg 'workspace 2; google-chrome --profile-directory="Default"'

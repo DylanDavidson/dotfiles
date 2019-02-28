@@ -42,7 +42,8 @@ Plugin 'liquidz/vivi.vim'
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'keith/rspec.vim'
-" React
+" JavaScript/React
+Plugin 'isRuslan/vim-es6' " ES6 Syntax
 Plugin 'mxw/vim-jsx' " Syntax/Indenting for React JSX Files
 
 " Ends Vundle processing
