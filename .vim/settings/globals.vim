@@ -54,3 +54,6 @@ let g:neomake_jsx_enabled_makers = ['eslint']
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
 
+" Support python3 syntax (types)
+let g:syntastic_python_python_exec = 'python3'
+
