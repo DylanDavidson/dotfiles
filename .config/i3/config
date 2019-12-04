@@ -8,7 +8,7 @@ font pango:Source Code Pro Light 10
 floating_modifier $mod
 
 # Start rxvt-unicode as default terminal
-bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Return exec gnome-terminal
 
 # Kills focused window
 bindsym $mod+Shift+q kill

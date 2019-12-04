@@ -45,6 +45,8 @@ Plugin 'keith/rspec.vim'
 " JavaScript/React
 Plugin 'isRuslan/vim-es6' " ES6 Syntax
 Plugin 'mxw/vim-jsx' " Syntax/Indenting for React JSX Files
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
 
 " Ends Vundle processing
 call vundle#end()
