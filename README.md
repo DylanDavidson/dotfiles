@@ -42,4 +42,8 @@ Do this all from your home directory (`~`)
 
         vim +PluginInstall +qall
 
+1. Install tmux plugin manager (TPM)
+
+         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 Woo! You're up and running with my configs.
