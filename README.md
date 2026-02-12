@@ -46,4 +46,6 @@ Do this all from your home directory (`~`)
 
          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+   Inside tmux, press `Ctrl-b` + `I` (capital i) to install the plugins.
+
 Woo! You're up and running with my configs.
