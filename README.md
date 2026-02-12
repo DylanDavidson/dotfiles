@@ -6,11 +6,15 @@ Do this all from your home directory (`~`)
 
 1. Install Brew
 
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+        Make sure to follow steps to add brew to PATH
 
 1. Install `tmux`
 
         brew install tmux
+
+1. If a new computer, [create a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and [add to Github](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) at https://github.com/settings/keys
 
 1. Clone the dotfiles
 
