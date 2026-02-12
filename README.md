@@ -4,6 +4,12 @@ Home of my unix setup for ~dylandavidson
 ### Installation
 Do this all from your home directory (`~`)
 
+1. [Download iTerm2](https://iterm2.com/)
+
+   - Once installed, open settings and go to Profiles > Keys > Hotkey Window and enable, set to Command+Shift+`
+   - Go to Window setting, set Style to `Full-Width Top of Screen`
+   - Go to General, change `Command` from `Login Shell` to `Command` and put `bash -l` in the box (this will load our ~/.bashrc)
+
 1. Install Brew
 
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
